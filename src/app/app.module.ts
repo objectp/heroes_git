@@ -20,14 +20,16 @@ import { InMemoryDataService }  from './in-memory-data.service';
   HeroDetailComponent,
   MessagesComponent,
   DashboardComponent,
-InMemoryDataService 
+  InMemoryDataService 
  ],
  imports: [
   BrowserModule,
   FormsModule,
   AppRoutingModule,
   HttpClientModule,
-  HttpClientInMemoryWebApiModule
+  HttpClientInMemoryWebApiModule.forRoot(
+    InMemoryDataService, { dataEncapsulation: false }
+  )
   
  ],
  providers: [],
